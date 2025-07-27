@@ -168,7 +168,7 @@ You can use `fake_news_detector.py` or `testing.py` to run the model on new data
 
 Below is the confusion matrix for the model's predictions on the test set:
 
-![Confusion Matrix](Fake-new-detector/confusion_matrix.png)
+![Confusion Matrix](confusion_matrix.png)
 
 ---
 
