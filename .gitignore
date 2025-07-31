@@ -164,17 +164,6 @@ cython_debug/
 # VS Code
 .vscode/
 
-# Model files
-*.pkl
-*.pickle
-*.joblib
-*.h5
-*.hdf5
-*.pb
-*.onnx
-*.pt
-*.pth
-*.safetensors
 
 # Data files
 *.csv
