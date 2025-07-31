@@ -80,11 +80,11 @@ VariNews/
 │   ├── main.ipynb
 │   ├── sample.ipynb
 │
-│   ├── app.py                 # Streamlit UI
-│   ├── query_normalization.py # Groq LLM integration
-│   ├── model.pkl
-│   ├── vectorizer.pkl
-│   └── confusion_matrix.png
+├── app.py                 # Streamlit UI
+├── query_normalization.py # Groq LLM integration
+├── model.pkl
+├── vectorizer.pkl
+├── confusion_matrix.png
 │
 └── README.md
 ```
