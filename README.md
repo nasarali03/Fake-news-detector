@@ -1,7 +1,3 @@
-Zabardast 👍 Tumhari README bohot structured hai, sirf VariNews ke branding aur tumhare naye features (LLM normalization + Streamlit UI) ko add karna banta hai. Main isko polish karke update karta hoon.
-
----
-
 # 📰 VariNews - Fake News Detector
 
 An AI-powered application to detect fake news using **Natural Language Processing (NLP)** and **Machine Learning**, enhanced with **LLM query normalization**.
