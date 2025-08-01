@@ -68,7 +68,7 @@ st.markdown("""
 # Reset button
 if st.button("🔄 Reset Chat"):
     st.session_state.chat_history = []
-    st.experimental_rerun()
+    st.rerun()
 
 # Show chat history
 for message in st.session_state.chat_history:
@@ -89,7 +89,7 @@ if user_input:
 
     if is_casual_conversation(user_input):
         with st.chat_message("assistant"):
-            st.info("💬 Processing your casual message...")
+            st.info("💬 Processing")
             time.sleep(1)
             llm_response = query_groq_llm_casual(user_input)
             st.write(llm_response)

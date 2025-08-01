@@ -8,6 +8,8 @@ from langchain_core.prompts import ChatPromptTemplate
 # Load environment variables from .env
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+os.environ["LANGCHAIN_TRACING_V2"]="true"
+os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 
 def query_groq_llm(query: str, conversation_type: str = "news") -> str:
     if not GROQ_API_KEY:
@@ -23,17 +25,13 @@ def query_groq_llm(query: str, conversation_type: str = "news") -> str:
     
     if conversation_type == "casual":
         # Casual mode: introduce itself as VariNews
-        prompt = ChatPromptTemplate.from_messages([
-            ("system", """You are VariNews 📰, an AI assistant designed to detect fake news.  
-            When users greet you or have casual conversation, respond politely.  
-            Always introduce yourself as 'VariNews' in your first response.  
-            
-            - Be friendly, empathetic, and concise (under 100 words).  
-            - Gently guide the user to provide a news headline or article for analysis.  
-            - Example: 'Hi there! I'm VariNews 📰. I'm here to help you check if a news article is real or fake. 
-              Could you please share a news headline or some text?'"""),
-            ("user", "{query}")
-        ])
+       prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are VariNews 📰, an AI assistant that detects fake news.  
+    In casual chats (greetings, thanks, etc.), reply politely and always introduce yourself as 'VariNews'.  
+    Keep responses friendly and under 60 words, and encourage the user to share a news headline or article for analysis."""),
+    ("user", "{query}")
+])
+
     else:
         # News mode: reformulate user query into more descriptive article-like text
         prompt = ChatPromptTemplate.from_messages([
